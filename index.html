@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Kishan B M</title>
+    <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        
+        /* CORRECTED CHATBOT POSITION AND ANIMATION */
+        .chat-container {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            z-index: 1000;
+        }
+
+        .chat-widget-button {
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+        }
+        
+        .chat-widget-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .chat-window {
+            opacity: 0;
+            position: fixed;
+            bottom: 24px;
+            right: 100px;
+            transform: scale(0);
+            transform-origin: bottom right; /* EXPANDS TO THE LEFT */
+            transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+        }
+
+        .chat-window.open {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .chat-message.bot {
+            background-color: #e2e8f0;
+            border-bottom-left-radius: 0;
+        }
+
+        .chat-message.user {
+            background-color: #00bcd4;
+            color: white;
+            border-bottom-right-radius: 0;
+        }
+
+        /* CORRECTED SOCIAL ICONS LAYOUT */
+        .hero-icons-footer {
+            display: flex;
+            align-items: flex-start;
+            justify-content: left;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .footer-icons {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="site-header transparent">
+        <div class="header-content">
+            <img src="signature.png" alt="Signature" class="header-logo">
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-name">Kishan B M</h1>
+            <h3>Full-stack Developer</h3>
+            <p class="hero-quote">“Building reliable systems and scalable products that solve real-world problems.”</p>
+            <div class="hero-icons-footer">
+                <a href="http://linkedin.com/in/kishanbm" target="_blank"><img src="linkedin (1).png" alt="LinkedIn"></a>
+                <a href="#"><img src="twitter (1).png" alt="Twitter"></a>
+                <a href="#"><img src="instagram (1).png" alt="Instagram"></a>
+            </div>
+        </div>
+    </section>
+
+    <section class="about-profile">
+        <div class="about-wrapper">
+            <div class="about-left">
+                <img src="MyImage.jpg" alt="Kishan" class="about-photo">
+            </div>
+            <div class="about-right">
+                <h2 class="howdy-title">Howdy!</h2>
+                <p class="about-bio">
+                    I’m Kishan B M, a passionate Full-stack Developer. I focus on building robust, scalable systems and meaningful products that solve real-world problems.
+                </p>
+                <div class="personal-info">
+                    <p><span>Name</span><span class="colon">:</span><span class="value">Kishan B M</span></p>
+                    <p><span>Age</span><span class="colon">:</span><span class="value">21 Years</span></p>
+                    <p><span>Country</span><span class="colon">:</span><span class="value">India</span></p>
+                    <p><span>Location</span><span class="colon">:</span><span class="value">Bengaluru, Karnataka</span></p>
+                    <p><span>Languages</span><span class="colon">:</span><span class="value">English, Kannada, Telugu</span></p>
+                    <p><span>Email</span><span class="colon">:</span><span class="value">kishanbm25@gmail.com</span></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="timeline section-bg">
+        <div class="education">
+            <h3>Education</h3>
+            <div class="card">
+                <h4>Bachelor of Computer Applications</h4>
+                <p>Sri Venkateshwara College of Engineering, Bengaluru</p>
+                <p>2021 - 2024</p>
+            </div>
+            <div class="card">
+                <h4>Class 12</h4>
+                <p>SBGNS Rural Composite PU College, Chikkaballapur</p>
+                <p>2019 - 2021</p>
+            </div>
+        </div>
+        <div class="work">
+            <h3>Experience</h3>
+            <div class="card">
+                <h4>Full-stack Developer</h4>
+                <p>KisanVista</p>
+                <p>Jan 2025 - Present</p>
+            </div>
+            <div class="card">
+                <h4>Backend Developer Intern</h4>
+                <p>SmallFare Services pvt. ltd</p>
+                <p>May 2025 - Aug 2025</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="skills">
+        <h3>Skills</h3>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <h4>Programming</h4>
+                <ul>
+                    <li>JavaScript</li>
+                    <li>Python</li>
+                    <li>HTML/CSS</li>
+                    <li>React.js</li>
+                    <li>Node.js</li>
+                    <li>Express.js</li>
+                </ul>
+            </div>
+            <div class="skill-card">
+                <h4>Databases</h4>
+                <ul>
+                    <li>MySQL</li>
+                    <li>MongoDB</li>
+                </ul>
+            </div>
+            <div class="skill-card">
+                <h4>Tools</h4>
+                <ul>
+                    <li>Git</li>
+                    <li>VS Code</li>
+                    <li>Postman</li>
+                    <li>Docker</li>
+                    <li>Apache Kafka</li>
+                    <li>Redis</li>
+                    <li>AWS</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="projects section-bg">
+        <h3>Projects</h3>
+        <div class="card">
+            <h4>KareerBot: AI-Powered Career Assistant</h4>
+            <p>Built a full-stack AI-powered career assistant using Gemini API + LangChain with RAG architecture. Implemented resume parsing, chat interface and personalized feedback system. HTML, CSS, Node.js, React, Express.js, LangChain, Axios, mammoth, Vector DB, Gemini API.</p>
+        </div>
+        <div class="card">
+            <h4>Fall Detection System for Elderly</h4>
+            <p>Developed a fall detection system using sensor data and integrated alert notifications via Telegram bot and Twilio voice calls.</p>
+        </div>
+        <div class="card">
+            <h4>Sign Language Recognition System</h4>
+            <p>Built the Sign Language Detection system using the ML when the prediction is made based on the trained model.</p>
+        </div>
+    </section>
+
+    <section class="startup">
+        <div class="startup-container">
+            <div class="startup-logo">
+                <a href="https://www.kisanvista.com" target="_blank">
+                    <img src="KisanVistaLogo.png" alt="KisanVista Logo">
+                </a>
+            </div>
+            <div class="startup-details">
+                <h2><a href="https://www.kisanvista.com" target="_blank">KisanVista</a></h2>
+                <p>Building smart solutions for modern agriculture. Its a platform where we support farmers in every aspect of their farming activities. We provide them with the necessary tools and resources to improve their productivity and profitability. Our application has several features which includes Ai powerd assistancs, chatbot, e-commerce, crop prediction etc</p>
+                <p><a href="#">Visit our LinkedIn</a></p>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact">
+        <div class="contact-box">
+            <form id="contact-form">
+                <input type="text" id="contact-name" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <input type="text" placeholder="Subject" required>
+                <textarea placeholder="Your Message" rows="5" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+        <div class="contact-box">
+            <p><span class="icon-circle"><i class="fa fa-map-marker"></i></span><a href="https://www.google.com/maps?q=Bengaluru,Karnataka" target="_blank">Bengaluru, Karnataka</a></p>
+            <p><span class="icon-circle"><i class="fa fa-phone"></i></span>+91 7676165938 </p>
+            <p><span class="icon-circle"><i class="fa fa-envelope"></i></span><a href="javascript:void(0)" onclick="scrollToContact()">kishanbm22@gmail.com</a></p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-icons">
+            <a href="http://linkedin.com/in/kishanbm" target="_blank"><img src="linkedin (1).png" alt="LinkedIn"></a>
+            <a href="#"><img src="twitter (1).png" alt="Twitter"></a>
+            <a href="#"><img src="instagram (1).png" alt="Instagram"></a>
+        </div>
+        <p class="footer-copyright">© 2025 Kishan B M. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        function scrollToContact() {
+            document.getElementById('contact-name').focus();
+            window.scrollTo({
+                top: document.getElementById('contact-form').offsetTop - 50,
+                behavior: 'smooth'
+            });
+        }
+        function clearForm(event) {
+            event.preventDefault();
+            document.getElementById('contact-form').reset();
+        }
+        window.addEventListener('scroll', function () {
+            const header = document.querySelector('.site-header');
+            header.classList.toggle('solid', window.scrollY > 50);
+            header.classList.toggle('transparent', window.scrollY <= 50);
+        });
+    </script>
+    
+    <div id="chat-container" class="chat-container">
+        <button id="chat-widget-button" class="chat-widget-button flex items-center justify-center w-16 h-16 bg-gradient-to-r from-teal-500 to-cyan-600 text-white rounded-full shadow-lg hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-teal-300">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"></path>
+            </svg>
+        </button>
+
+        <div id="chat-window" class="chat-window bg-white w-80 sm:w-96 rounded-2xl shadow-xl overflow-hidden mt-4 flex flex-col h-[60vh]">
+            <div class="bg-gradient-to-r from-teal-500 to-cyan-600 text-white p-4 flex items-center justify-between rounded-t-2xl">
+                <h3 class="font-bold text-lg">Ask Kishan!</h3>
+                <button id="close-chat-button" class="text-white hover:text-gray-200">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            
+            <div id="message-area" class="flex-grow p-4 overflow-y-auto space-y-4">
+                <div class="chat-message bot p-3 rounded-xl max-w-[80%]">
+                    Hello! I'm an AI assistant. I can answer questions about Kishan's professional experience, projects, skills, and contact information.
+                </div>
+            </div>
+
+            <div class="p-4 bg-gray-50 border-t border-gray-200 flex items-center rounded-b-2xl">
+                <input id="user-input" type="text" placeholder="Type your question..." class="flex-grow px-4 py-2 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-cyan-400 text-sm">
+                <button id="send-button" class="ml-2 w-10 h-10 flex items-center justify-center rounded-full bg-cyan-500 text-white hover:bg-cyan-600 focus:outline-none focus:ring-2 focus:ring-cyan-400">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 00.149 1.459A1 1 0 007 18h6a1 1 0 00.894-.553l7-14a1 1 0 00-.149-1.459z"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        const chatWidgetButton = document.getElementById('chat-widget-button');
+        const closeChatButton = document.getElementById('close-chat-button');
+        const chatWindow = document.getElementById('chat-window');
+        const messageArea = document.getElementById('message-area');
+        const userInput = document.getElementById('user-input');
+        const sendButton = document.getElementById('send-button');
+
+        // This is a placeholder for your resume content.
+        // You MUST replace this with the actual, full text of your resume.
+        const resumeContent = `
+            KISHAN B M
+
+            +91 7676165938 | kishanbm22@gmail.com
+            linkedin.com/in/kishanbm | Bengaluru, Karnataka, India, 562104
+
+            **PROFESSIONAL SUMMARY**
+            Results-driven AI-powered Full-Stack Developer passionate about building scalable web applications and integrating advanced AI functionalities to improve user experience.
+
+            **EDUCATION**
+            Visveswaraya Technological University, Sri Venkateshwara College of Engineering (Computer Science-AI), December 2021 - May 2025, CGPA 8.35/10
+
+            **SKILLS**
+            - **Full Stack Development:** Python, JavaScript, HTML, CSS, React.js, Node.js, Express.js, REST APIS
+            - **Databases and storage:** PostgreSQL, MongoDB, Redis
+            - **Tools:** Git, GitHub, Docker, Postman Generative AI, LangChain, RAG, Vector database, Prompt Engineering, Kafka
+
+            **EXPERIENCE**
+            - **Small Fare Services Pvt. Ltd. (Backend Developer Intern):** May 2025-Aug 2025. Developed and maintained Node.js backend services for an event management platform using Express.js and PostgreSQL. Integrated payment gateways (Cashfree, Razorpay, PhonePe) and implemented secure payment workflows, including webhooks and refund process. Implemented the coupon system for booking and wallet recharge for discount and cashback and then collaborated on order management and transactional notifications. And also implemented the OTP logic. Implemented the notification system for mail, sms and push notification for wallet including retry mechanism. Tech Stack: Node.js, Express.js, PostgreSQL, REST APIs, Postman, Docker, Kafka, Git, GitHub, Redis, Plivo.
+            - **Kisan Vista (Full-Stack Developer and AI Integration):** Jan 2025-Present. Designing and building a comprehensive platform to assist farmers using AI. The system provides Crop Recommendations, E-commerce, Government Scheme Registration, and an AI-powered chatbot for Assistance. A video section for tutorials, best practices, and instructions to support farmers in every step. Tech Stack: React.js, Node.js, Express.js, MySQL, MongoDB, Python, Flask, OpenAI GPT, Gemini, Google STT and TSS, Redis, Kafka, Docker, Postman, Git, GitHub, Vector database, RAG.
+
+            **PROJECTS**
+            - **KareerBot: AI-Powered Career Assistant:** Built a full-stack AI-powered career assistant using Gemini API + LangChain with RAG architecture. Implemented resume parsing, chat interface and personalized feedback system. HTML, CSS, Node.js, React, Express.js, LangChain, Axios, mammoth, Vector DB, Gemini API.
+            - **Sign Language Recognition System:** Concentrating on sign language recognition, particularly to identify hand gestures from video input, the system detects signs via a webcam for real-time recognition. Python, OpenCV, Mediapipe, Streamlit.
+
+            **CERTIFICATIONS**
+            - Front End Development and JavaScript certification - freecodecamp.
+            - Python & Machine Learning Bundle - Infosys Springboard
+            - Generative AI mastermind - Outskill
+        `;
+
+        // The system instruction for the AI. This tells the model how to behave.
+        const systemPrompt = `You are a helpful and friendly AI assistant for Kishan. Your purpose is to answer questions about Kishan's professional experience, projects, skills, and any other details mentioned on his resume. Use the provided text below, which is a copy of Kishan's resume, as your sole source of information. Do not use any external knowledge. If a question is asked that cannot be answered from the provided resume text, you must respond with: "I'm sorry, I can only answer questions about Kishan's professional experience based on the information provided to me. Please ask something about his skills, projects, or work history."
+        
+        Kishan's Resume:
+        ${resumeContent}
+        `;
+
+        let isFetching = false;
+
+        const appendMessage = (message, sender) => {
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `chat-message p-3 rounded-xl max-w-[80%] w-fit ${sender === 'user' ? 'user ml-auto' : 'bot'}`;
+            messageDiv.textContent = message;
+            messageArea.appendChild(messageDiv);
+            messageArea.scrollTop = messageArea.scrollHeight;
+        };
+
+        const sendMessage = async () => {
+            const userMessage = userInput.value.trim();
+            if (userMessage === '') return;
+
+            if (isFetching) {
+                appendMessage("Please wait for the current response to finish.", "bot");
+                return;
+            }
+
+            appendMessage(userMessage, 'user');
+            userInput.value = '';
+
+            isFetching = true;
+            appendMessage("Thinking...", "bot");
+            
+            // Simulating a brief delay for a better user experience
+            await new Promise(resolve => setTimeout(resolve, 500));
+
+            try {
+                // Fetch the API key from a secure source in a real application.
+                // For this example, it's left blank and will be handled by the Canvas environment.
+                const apiKey = "AIzaSyDakCLulZky2G8OS-2q7I3neVMqV_TrTQA"; 
+                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
+
+                const payload = {
+                    contents: [{ parts: [{ text: userMessage }] }],
+                    systemInstruction: { parts: [{ text: systemPrompt }] },
+                };
+
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+                
+                if (!response.ok) {
+                    throw new Error(`API call failed with status: ${response.status}`);
+                }
+
+                const result = await response.json();
+                const candidate = result.candidates?.[0];
+                let botResponseText = "I'm sorry, I encountered an issue. Please try again.";
+                
+                if (candidate && candidate.content?.parts?.[0]?.text) {
+                    botResponseText = candidate.content.parts[0].text;
+                } else {
+                    console.error("Unexpected API response structure:", result);
+                }
+
+                messageArea.lastChild.textContent = botResponseText;
+
+            } catch (error) {
+                console.error('Error fetching from Gemini API:', error);
+                messageArea.lastChild.textContent = "I'm sorry, there was an error processing your request. Please try again later.";
+            } finally {
+                isFetching = false;
+                messageArea.scrollTop = messageArea.scrollHeight;
+            }
+        };
+
+        // Event Listeners
+        chatWidgetButton.addEventListener('click', () => {
+            chatWindow.classList.toggle('open');
+        });
+
+        closeChatButton.addEventListener('click', () => {
+            chatWindow.classList.remove('open');
+        });
+
+        sendButton.addEventListener('click', sendMessage);
+
+        userInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                sendMessage();
+            }
+        });
+    </script>
+</body>
+</html>

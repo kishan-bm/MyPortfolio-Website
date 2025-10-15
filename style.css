@@ -488,3 +488,87 @@ footer {
     align-items: flex-start;
     align-content: flex-start;
 }
+
+/* MY WORK SECTION */
+.my-work {
+  padding: 60px 20px;
+  background-color: #fff;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2rem;
+  margin-bottom: 40px;
+  color: #000;
+}
+
+.work-container {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 30px;
+  flex-wrap: wrap;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.work-card {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  flex: 1 1 30%;
+  min-width: 280px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.work-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.work-logo {
+  max-width: 250px;
+  height: auto;
+  margin-bottom: 15px;
+  transition: transform 0.3s ease;
+  align-items: center;
+  margin-left: 27.5px;
+}
+
+.work-card:hover .work-logo {
+  transform: scale(1.05);
+}
+
+.work-card h3 {
+  font-size: 1.4rem;
+  margin: 10px 0;
+}
+
+.work-card h3 a {
+  color: #00b4d9;
+  text-decoration: none;
+}
+
+.work-card h3 a:hover {
+  text-decoration: underline;
+}
+
+.work-card p {
+  font-size: 0.95rem;
+  color: #444;
+  line-height: 1.5;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .work-card {
+    flex: 1 1 45%;
+  }
+}
+
+@media (max-width: 600px) {
+  .work-card {
+    flex: 1 1 100%;
+  }
+}

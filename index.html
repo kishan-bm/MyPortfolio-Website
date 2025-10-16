@@ -93,12 +93,18 @@
     <section class="hero">
         <div class="hero-content">
             <h1 class="hero-name">Kishan B M</h1>
-            <h3>Full-stack Developer</h3>
+            <h3>AI Powered Full Stack Developer</h3>
             <p class="hero-quote">“Building reliable systems and scalable products that solve real-world problems.”</p>
             <div class="hero-icons-footer">
                 <a href="http://linkedin.com/in/kishanbm" target="_blank"><img src="linkedin (1).png" alt="LinkedIn"></a>
                 <a href="#"><img src="twitter (1).png" alt="Twitter"></a>
                 <a href="#"><img src="instagram (1).png" alt="Instagram"></a>
+                <a href="https://github.com/kishan-bm" target="_blank">
+                    <img src="github.png" alt="GitHub">
+                </a>
+                <a href="https://leetcode.com/u/kishanbm22/" target="_blank">
+                    <img src="leetcode3.png" alt="LeetCode">
+                </a>
             </div>
         </div>
     </section>
@@ -158,7 +164,7 @@
         <h3>Skills</h3>
         <div class="skills-grid">
             <div class="skill-card">
-                <h4>Programming</h4>
+                <h4>Full-Stack Development</h4>
                 <ul>
                     <li>JavaScript</li>
                     <li>Python</li>
@@ -166,18 +172,25 @@
                     <li>React.js</li>
                     <li>Node.js</li>
                     <li>Express.js</li>
+                    <li>REST APIs</li>
                 </ul>
             </div>
             <div class="skill-card">
-                <h4>Databases</h4>
+                <h4>Databases & Storage</h4>
                 <ul>
                     <li>MySQL</li>
                     <li>MongoDB</li>
+                    <li>Redis</li>
                 </ul>
             </div>
             <div class="skill-card">
                 <h4>Tools</h4>
                 <ul>
+                    <li>Generative AI</li>
+                    <li>LangChain</li>
+                    <li>RAG</li>
+                    <li>Vector Database</li>
+                    <li>Agentic AI</li>
                     <li>Git</li>
                     <li>VS Code</li>
                     <li>Postman</li>
@@ -217,14 +230,14 @@
         <img src="KisanVistaLogo2.png" alt="KisanVista Logo" class="work-logo">
       </a>
       <h3><a href="https://www.kisanvista.com" target="_blank">KisanVista</a></h3>
-      <p>Building smart solutions for modern agriculture. (You can update this text later)</p>
+      <p>Building smart solutions for modern agriculture. An E-Commerce application for farmers and other minor features inclues: AI Assistance, Chatbot, Crop prediction, and many more features. To know more about the application please visit the website.</p>
     </div>
 
     <!-- KareerBot -->
     <div class="work-card">
       <img src="KareerBotLogo.png" alt="KareerBot Logo" class="work-logo">
       <h3>KareerBot</h3>
-      <p>An intelligent career guidance chatbot platform. (Placeholder text — update later)</p>
+      <p>An intelligent career guidance AI Agent platform. Users can buy their own agnet and by providing the required details to the bot the agent sets the goal, track the goal, success prediction and apply for the jobs.To know more about the application please visit the website.</p>
     </div>
 
     <!-- CareerFastrack -->
@@ -233,7 +246,7 @@
         <img src="CareerFastrack1.png" alt="CareerFastrack Logo" class="work-logo">
       </a>
       <h3><a href="https://my-course-platform-beta.vercel.app/" target="_blank">CareerFastrack</a></h3>
-      <p>A platform helping learners grow through structured online learning paths. (Placeholder)</p>
+      <p>An E-Learning platform where the users can access to courses , free mentorship, AI carrier assistance, Placement assistance, Live sessions and many more. To know more about the application please visit the website.</p>
     </div>
   </div>
 </section>
@@ -452,6 +465,19 @@
                 sendMessage();
             }
         });
+        window.addEventListener('scroll', function() {
+  const header = document.querySelector('.site-header');
+  const hero = document.querySelector('.hero');
+  const heroHeight = hero.offsetHeight;
+
+  if (window.scrollY > heroHeight - 80) {
+    header.classList.remove('transparent');
+    header.classList.add('solid');
+  } else {
+    header.classList.add('transparent');
+    header.classList.remove('solid');
+  }
+});
     </script>
 </body>
 </html>

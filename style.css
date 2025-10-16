@@ -429,7 +429,6 @@ footer {
   /* filter: drop-shadow(0 0 6px #00b4d9); */
 }
 
-
 html, body {
   box-sizing: border-box;
   overflow-x: hidden; /* prevents any tiny overflow from showing a scrollbar */
